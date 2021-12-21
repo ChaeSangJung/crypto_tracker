@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const Tilte = styled.h1`
-  color: ${(props) => props.theme.accentColor};
-`;
-
 const coins = [
   {
     id: "btc-bitcoin",
@@ -35,19 +31,49 @@ const coins = [
   },
 ];
 
+const Tilte = styled.h1`
+  color: ${(props) => props.theme.accentColor};
+`;
+const Container = styled.div`
+  padding: 0px 20px;
+`;
+const Header = styled.header`
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const ListCoin = styled.ul``;
+const ItemCoin = styled.li`
+  background-color: white;
+  color: ${(props) => props.theme.bgColor};
+  border-radius: 15px;
+  margin-bottom: 10px;
+  a {
+    padding: 20px;
+    transition: color 0.2s ease-in;
+    display: block;
+  }
+  &:hover {
+    a {
+      color: ${(props)=>props.theme.accentColor};
+    }
+  }
+`;
+
 const Coins = () => {
   return (
     <>
-      <div>
-        <header>
+      <Container>
+        <Header>
           <Tilte>Coins</Tilte>
-        </header>
-        <ul>
+        </Header>
+        <ListCoin>
           {coins.map((coin) => (
-            <li><Link to={`/${coin.id}`}>{coin.name}</Link></li>
+            <ItemCoin><Link to={`/${coin.id}`}>{coin.name}</Link></ItemCoin>
           ))}
-        </ul>
-      </div>
+        </ListCoin>
+      </Container>
     </>
   );
 }
