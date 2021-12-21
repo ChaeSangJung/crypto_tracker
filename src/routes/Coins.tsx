@@ -21,7 +21,8 @@ const ItemCoin = styled.li`
   border-radius: 15px;
   background-color: white;
   a {
-    display: block;
+    display: flex;
+    align-items: center;
     padding: 20px;
     transition: color 0.2s ease-in;
   }
@@ -34,6 +35,11 @@ const ItemCoin = styled.li`
 const Loader = styled.span`
   text-align: center;
   display: block;
+`;
+const Img = styled.img`
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
 `;
 
 interface CoinInterface {
@@ -68,7 +74,21 @@ const Coins = () => {
         ) : (
           <ListCoin>
             {coins.map((coin) => (
-              <ItemCoin key={coin.id}><Link to={`/${coin.id}`}>{coin.name}&nbsp;&rarr;</Link></ItemCoin>
+              <ItemCoin key={coin.id}>
+                <Link 
+                  // to={`/${coin.id}`}                
+                  to = {{
+                    pathname:`/${coin.id}`,
+                    state: {name:coin.name}
+                  }}
+                >
+                  <Img
+                    src={`https://cryptoicon-api.vercel.app/api/icon/${coin.symbol.toLowerCase()}`}
+                    alt={`${coin.name}'s icon`}
+                  />
+                  {coin.name}&nbsp;&rarr;
+                </Link>
+              </ItemCoin>
             ))}
           </ListCoin>
         )}        
