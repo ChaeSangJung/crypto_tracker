@@ -70,7 +70,7 @@ const Coins = () => {
         </Header>
         <ListCoin>
           {coins.map((coin) => (
-            <ItemCoin><Link to={`/${coin.id}`}>{coin.name}</Link></ItemCoin>
+            <ItemCoin key={coin.id}><Link to={`/${coin.id}`}>{coin.name}&nbsp;&rarr;</Link></ItemCoin>
           ))}
         </ListCoin>
       </Container>
