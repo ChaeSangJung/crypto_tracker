@@ -38,21 +38,21 @@ const Container = styled.div`
   padding: 0px 20px;
 `;
 const Header = styled.header`
-  height: 15vh;
-  display: flex;
+  display: flex;  
   justify-content: center;
   align-items: center;
+  height: 15vh;
 `;
 const ListCoin = styled.ul``;
 const ItemCoin = styled.li`
-  background-color: white;
+  margin-bottom: 10px;
   color: ${(props) => props.theme.bgColor};
   border-radius: 15px;
-  margin-bottom: 10px;
+  background-color: white;
   a {
+    display: block;
     padding: 20px;
     transition: color 0.2s ease-in;
-    display: block;
   }
   &:hover {
     a {
