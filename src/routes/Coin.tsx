@@ -4,9 +4,10 @@ interface RouteParams {
   coinId: string;
 }
 
-function Coin() {
+const Coin = () => {
   // const { coinId } = useParams<{coinId:string}>();
   const { coinId } = useParams<RouteParams>();
   return <h1>Coin: {coinId}</h1>;  
 }
+
 export default Coin;
