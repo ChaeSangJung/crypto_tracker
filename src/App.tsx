@@ -78,9 +78,9 @@ const App = () => {
   return (
     <>
       <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
-        <button onClick={toggleDark}>Toggle Mode</button>
+        <span>(20+17+17+16, 80)/5 = 16</span>
         <GlobalStyle />
-        <Router />
+        <Router isDark={isDark} toggleDark={toggleDark} />
         <ReactQueryDevtools initialIsOpen={true} />
       </ThemeProvider>
     </>
