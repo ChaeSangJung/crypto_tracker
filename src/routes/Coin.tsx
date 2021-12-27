@@ -187,6 +187,9 @@ const Coin = () => {
           {state?.name? state.name : loading ? "Loading..." : infoData?.name}
         </Title>
       </Header>
+      <div>
+            <Link to="/">&larr;</Link>
+          </div>
       {loading ? <Loader>Loading...</Loader> : (
         <>
           <Overview>
@@ -224,7 +227,11 @@ const Coin = () => {
           </Tabs>
           <Switch>
             <Route path={`/:coinId/price`}>
-              <Price/>
+              <Price 
+                coinId={coinId}
+                tickerData = {tickerData}
+                tickerLoading = {tickerLoading}
+              />
             </Route>
             <Route path={`/:coinId/chart`}>
               <Chart coinId={coinId}/>
