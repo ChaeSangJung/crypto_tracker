@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { Switch, Route, useLocation, useParams, useRouteMatch } from "react-router";
 import { Link } from "react-router-dom";
@@ -164,7 +164,7 @@ const Coin = () => {
   // }, [coinId]);
 
   const {isLoading:infoLoading, data:infoData} = useQuery<InfoData>(["info", coinId], ()=>fetchCoinInfo(coinId));
-  const {isLoading:tickerLoading, data:tickerData} = useQuery<PriceData>(["price", coinId],()=>fetchCoinTickers(coinId));
+  const {data:tickerData} = useQuery<PriceData>(["price", coinId],()=>fetchCoinTickers(coinId));
   
   return (
     <Container>
@@ -214,7 +214,7 @@ const Coin = () => {
               <Price/>
             </Route>
             <Route path={`/:coinId/chart`}>
-              <Chart />
+              <Chart coinId={coinId}/>
             </Route>
           </Switch>
         </>
