@@ -20,9 +20,10 @@ const Header = styled.header`
 const ListCoin = styled.ul``;
 const ItemCoin = styled.li`
   margin-bottom: 10px;
-  color: ${(props) => props.theme.bgColor};
+  background-color: ${(props) => props.theme.cardBgColor};
+  color: ${(props)=>(props.theme.textColor)};
   border-radius: 15px;
-  background-color: white;
+  border: 1px solid white;
   a {
     display: flex;
     align-items: center;
