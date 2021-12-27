@@ -62,6 +62,13 @@ const Chart = ({coinId}:ChartProps) => {
                   yaxis: {
                     show: false,
                   },
+                  tooltip: {
+                    enabled: true,
+                    y: {
+                        formatter: (value) => `$${value.toFixed(2)}`,
+                      },
+                  },
+                  
                 }}
               />
               )}

@@ -1,5 +1,6 @@
 // import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
+import { Helmet } from "react-helmet";
 import { Switch, Route, useLocation, useParams, useRouteMatch } from "react-router";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -164,17 +165,29 @@ const Coin = () => {
   // }, [coinId]);
 
   const {isLoading:infoLoading, data:infoData} = useQuery<InfoData>(["info", coinId], ()=>fetchCoinInfo(coinId));
-  const {data:tickerData} = useQuery<PriceData>(["price", coinId],()=>fetchCoinTickers(coinId));
+  const {isLoading: tickerLoading, data:tickerData} = useQuery<PriceData>(
+    ["price", coinId],
+    ()=>fetchCoinTickers(coinId),
+    {
+      refetchInterval:5000,
+    }
+  );
   
+  const loading = tickerLoading || infoLoading;
   return (
     <Container>
+      <Helmet>
+        <title>
+          {state?.name? state.name : loading ? "Loading..." : infoData?.name}
+        </title>
+      </Helmet>
       <Header>
         {/* <Title>{state?.name || "Loading..."}</Title> */}
         <Title>
-          {state?.name? state.name : infoLoading ? "Loading..." : infoData?.name}
+          {state?.name? state.name : loading ? "Loading..." : infoData?.name}
         </Title>
       </Header>
-      {infoLoading ? <Loader>Loading...</Loader> : (
+      {loading ? <Loader>Loading...</Loader> : (
         <>
           <Overview>
             <OverviewItem>
@@ -186,8 +199,8 @@ const Coin = () => {
                 <span>${infoData?.symbol}</span>
               </OverviewItem>
               <OverviewItem>
-                <span>Open Source:</span>
-                <span>{infoData?.open_source ? "Yes" : "No"}</span>
+                <span>Price:</span>
+                <span>${tickerData?.quotes.USD.price.toFixed(10)}</span>
               </OverviewItem>
           </Overview>
           <Description>{infoData?.description}</Description>
