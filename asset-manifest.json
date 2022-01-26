@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "http://localhost:3000/static/js/main.cc6314ea.chunk.js",
-    "main.js.map": "http://localhost:3000/static/js/main.cc6314ea.chunk.js.map",
-    "runtime-main.js": "http://localhost:3000/static/js/runtime-main.57d12bb6.js",
-    "runtime-main.js.map": "http://localhost:3000/static/js/runtime-main.57d12bb6.js.map",
-    "static/js/2.a4b3087b.chunk.js": "http://localhost:3000/static/js/2.a4b3087b.chunk.js",
-    "static/js/2.a4b3087b.chunk.js.map": "http://localhost:3000/static/js/2.a4b3087b.chunk.js.map",
-    "index.html": "http://localhost:3000/index.html",
-    "static/js/2.a4b3087b.chunk.js.LICENSE.txt": "http://localhost:3000/static/js/2.a4b3087b.chunk.js.LICENSE.txt"
+    "main.js": "https://github.com/ChaeSangJung/crypto_tracker/static/js/main.798cfb0a.chunk.js",
+    "main.js.map": "https://github.com/ChaeSangJung/crypto_tracker/static/js/main.798cfb0a.chunk.js.map",
+    "runtime-main.js": "https://github.com/ChaeSangJung/crypto_tracker/static/js/runtime-main.1c6e5d32.js",
+    "runtime-main.js.map": "https://github.com/ChaeSangJung/crypto_tracker/static/js/runtime-main.1c6e5d32.js.map",
+    "static/js/2.75ee0bc9.chunk.js": "https://github.com/ChaeSangJung/crypto_tracker/static/js/2.75ee0bc9.chunk.js",
+    "static/js/2.75ee0bc9.chunk.js.map": "https://github.com/ChaeSangJung/crypto_tracker/static/js/2.75ee0bc9.chunk.js.map",
+    "index.html": "https://github.com/ChaeSangJung/crypto_tracker/index.html",
+    "static/js/2.75ee0bc9.chunk.js.LICENSE.txt": "https://github.com/ChaeSangJung/crypto_tracker/static/js/2.75ee0bc9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.57d12bb6.js",
-    "static/js/2.a4b3087b.chunk.js",
-    "static/js/main.cc6314ea.chunk.js"
+    "static/js/runtime-main.1c6e5d32.js",
+    "static/js/2.75ee0bc9.chunk.js",
+    "static/js/main.798cfb0a.chunk.js"
   ]
 }
