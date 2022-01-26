@@ -91,7 +91,7 @@ const Coins = () => {
             <ItemCoin key={coin.id}>
               <Link
                 to={{
-                  pathname: `/${coin.id}`,
+                  pathname: `/${coin.id}/chart`,
                   state: { name: coin.name },
                 }}
               >
