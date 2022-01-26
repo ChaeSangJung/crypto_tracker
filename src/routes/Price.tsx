@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import WrapContent from "../components/WrapContent";
 
 interface PriceData {
@@ -40,10 +39,6 @@ interface PriceProps {
     tickerData? : PriceData;
     tickerLoading : boolean;
 }
-
-const TextContent = styled.p<{isPositive ?:boolean}>`
-    color: ${(props) => (props.isPositive ? "red" : "blue")}
-`;
 
 const Price = ({coinId, tickerData, tickerLoading}:PriceProps) => {
     

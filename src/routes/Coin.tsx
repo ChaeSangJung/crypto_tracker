@@ -136,10 +136,8 @@ interface PriceData {
     };
   };
 }
-interface ICoinProps {}
 
-
-const Coin = ({}:ICoinProps) => {
+const Coin = () => {
   // const [loading, setLoading] = useState(true);
   // // const { coinId } = useParams<{coinId:string}>();
   const { coinId } = useParams<RouteParams>();

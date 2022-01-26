@@ -57,9 +57,8 @@ interface ICoin {
   is_active: boolean;
   type: string;
 }
-interface ICoinProp {}
 
-const Coins = ({}:ICoinProp) => {
+const Coins = () => {
   // const [coins, setCoins] = useState<ICoin[]>([]);
   // const [loading, setLoading] = useState(true);
   // useEffect(()=>{
